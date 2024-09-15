@@ -5,7 +5,7 @@ COPY . /app
 
 # Copy your Docker Compose files into the container
  COPY docker-compose.yaml ./
- COPY .env ./
+# COPY .env ./
 
 # # Install any dependencies (if needed)
 # # RUN apt-get update && apt-get install -y some-magical-package
