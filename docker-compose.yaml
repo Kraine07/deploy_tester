@@ -15,7 +15,7 @@ services:
   app:
     build: .
     ports:
-      - "8080:8080"
+      - "3300"
     depends_on:
       - redis
     networks:
@@ -25,6 +25,8 @@ services:
       - SPRING_REDIS_HOST=redis
       - SPRING_REDIS_PORT=6379
     restart: always
+    labels:
+      org.springframework.boot.readiness-check.tcp.disable: "true"
 
 networks:
   app-network:
